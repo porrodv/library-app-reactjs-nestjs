@@ -3,8 +3,8 @@ import { Outlet } from 'react-router-dom';
 export const Layout: React.FC = () => {
   return (
     <>
-      <div>header</div>
-      <div className='bg-red-700 text-white'>
+      <div className='w-full h-20 bg-green-500'>ACÁ VA IR EL HEADER</div>
+      <div className='bg-transparent text-white p-2'>
         <Outlet />
       </div>
     </>
