@@ -21,7 +21,6 @@ export class BookController {
 
   @Post('create')
   async create(@Body() book: CreateBookDTO): Promise<BookDocument> {
-    console.log('hola');
     return await this.bookService.create(book);
   }
 

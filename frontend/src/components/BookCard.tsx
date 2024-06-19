@@ -3,7 +3,7 @@ interface BookCardProps {
   author: string;
   summary: string;
   publishYear: number;
-  imageUrl?: string;
+  image?: string;
 }
 
 export const BookCard: React.FC<BookCardProps> = ({
@@ -11,7 +11,7 @@ export const BookCard: React.FC<BookCardProps> = ({
   author,
   summary,
   publishYear,
-  imageUrl,
+  image,
 }: BookCardProps) => {
   return (
     <div
@@ -26,9 +26,9 @@ export const BookCard: React.FC<BookCardProps> = ({
         </div>
       </div>
       <div className='w-full h-64 rounded-lg'>
-        {imageUrl !== undefined ? (
+        {image !== undefined ? (
           <img
-            src={imageUrl}
+            src={image}
             className='h-full w-full object-scale-cover rounded-b-lg'
             alt='portada 1'
           />

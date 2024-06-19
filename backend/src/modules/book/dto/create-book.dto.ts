@@ -29,4 +29,8 @@ export class CreateBookDTO {
   @Min(1)
   @IsOptional()
   copiesAvailable: number;
+
+  @IsString()
+  @IsOptional()
+  image: string;
 }

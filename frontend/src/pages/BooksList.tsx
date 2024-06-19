@@ -34,7 +34,7 @@ export const BooksList: React.FC = () => {
             className='block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500'
           ></input>
         </div>
-        <div>ACÁ IRAN FILTROS</div>
+        <div>Próximamente: filtros</div>
       </div>
       <section className='w-full grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
         {data.map((book) => (
@@ -44,7 +44,7 @@ export const BooksList: React.FC = () => {
               author={book.author}
               summary={book.summary}
               publishYear={book.year}
-              imageUrl='https://marketplace.canva.com/EAE8SCCNlvo/1/0/1003w/canva-verde-y-rosa-ciencia-ficci%C3%B3n-portada-de-libro-SSKxUZUBOJg.jpg'
+              image={book.image}
             />
           </div>
         ))}

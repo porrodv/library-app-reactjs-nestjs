@@ -26,6 +26,9 @@ export class Book {
   @Prop({ default: 1 })
   copiesAvailable: number;
 
+  @Prop({ default: '' })
+  image: string;
+
   //   rented: [Rental];
 }
 
