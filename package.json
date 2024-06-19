@@ -1,0 +1,21 @@
+{
+    "name": "library-app-reactjs-nestjs",
+    "version": "1.0.0",
+    "description": "Aplicativo de gestión de library (Backend & Frontend)",
+    "scripts": {
+        "back:install": "cd backend && npm install",
+        "front:install": "cd frontend && npm install",
+        "back:dev": "cd backend && npm run start:dev",
+        "front:dev": "cd frontend && npm run dev"
+    },
+    "author": "Alexander Porro <alex1020pl@gmail.com>",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Alexander Porro",
+            "email": "alex1020pl@gmail.com",
+            "url": "https://github.com/porrodv"
+        }
+    ],
+    "devDependencies": {}
+}

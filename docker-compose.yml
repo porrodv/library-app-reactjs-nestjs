@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  mongo:
+    container_name: library-app-db
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: nestuser
+      MONGO_INITDB_ROOT_PASSWORD: nestpass
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+
+  # backend:
+  #   container_name: library-app-backend
+  #   image: library-app/backend
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.backend
+  #   environment:
+  #     MONGO_URI: mongodb://nestuser:nestpass@mongo:27017/library?authSource=admin
+  #     API_PORT: 3000
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - "./backend:/src/app"
+
+  # frontend:
+  #   container_name: library-app-frontend
+  #   image: library-app/frontend
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.frontend
+  #   environment:
+  #     VITE_API_PROT: http
+  #     VITE_API_HOST: localhost
+  #     VITE_API_PORT: 3000
+  #     VITE_API_PATH: library/v1
+  #   ports:
+  #     - "5173:5173"
+  #   volumes:
+  #     - "./frontend:/src/app"
