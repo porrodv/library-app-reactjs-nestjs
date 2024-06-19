@@ -75,7 +75,7 @@ MONGO_URI=mongodb+srv://<name>:<password>@cluster0.4douy49.mongodb.net/?retryWri
 
 ### 3) Uso de imagen Docker
 
-- Es necesario tener instalado y configurado [Docker]().
+- Es necesario tener instalado y configurado [Docker](https://www.docker.com/).
 
 - Ejecutar en la raíz del proyecto:
 
@@ -112,7 +112,7 @@ $ npm run back:dev
 # El frontend del proyecto será alojado en <http://localhost:5173>
 ```
 
-#### Variables de entorno
+### Variables de entorno
 
 Para configurar las variables de entorno necesarias se debe crear un archivo `.env` a partir del ejemplo situado en la raíz del proyecto. Los siguientes valores son de prueba, modificar en caso ser necesario.
 
@@ -128,7 +128,7 @@ VITE_API_PORT=3000
 VITE_API_PATH=library/v1
 ```
 
-#### Inicialización de base de datos
+### Inicialización de base de datos
 
 Al levantar el proyecto con todas las dependencias, haremos uso del backend conectado a la base de datos pero esta será generada vacía. Para agregar datos de prueba iniciales al proyecto es necesario ejecutar el archivo `init-mongo.js` que contiene el código necesario para generar los datos.
 
