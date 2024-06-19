@@ -8,12 +8,9 @@ import { BookModule } from './modules/book/book.module';
 @Module({
   imports: [
     ConfigModule.forRoot(configModuleOptions),
-    MongooseModule.forRoot(
-      'mongodb+srv://porrito:t6R7CnxVp312KFZB@cluster0.4douy49.mongodb.net/library?retryWrites=true&w=majority&appName=Cluster0',
-      {
-        autoIndex: true,
-      },
-    ),
+    MongooseModule.forRoot(process.env.MONGO_URI, {
+      autoIndex: true,
+    }),
     BookModule,
   ],
   controllers: [],

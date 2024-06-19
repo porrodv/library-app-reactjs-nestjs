@@ -1,6 +1,7 @@
 interface BookCardProps {
   title: string;
   author: string;
+  summary: string;
   publishYear: number;
   imageUrl?: string;
 }
@@ -8,6 +9,7 @@ interface BookCardProps {
 export const BookCard: React.FC<BookCardProps> = ({
   title,
   author,
+  summary,
   publishYear,
   imageUrl,
 }: BookCardProps) => {
@@ -42,12 +44,7 @@ export const BookCard: React.FC<BookCardProps> = ({
           id='summary-section'
           className='h-full flex flex-col justify-between p-6'
         >
-          <p className='line-clamp-[9]'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            dolores architecto nostrum beatae nesciunt asperiores maiores
-            tempora modi, neque optio illum animi hic error aliquid facere
-            sapiente asdsa asdasd as
-          </p>
+          <p className='line-clamp-[9]'>{summary}</p>
           <a
             href='#'
             className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-center'

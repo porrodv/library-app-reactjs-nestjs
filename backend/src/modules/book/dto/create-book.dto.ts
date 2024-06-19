@@ -19,6 +19,7 @@ export class CreateBookDTO {
   year: number;
 
   @IsString()
+  @IsNotEmpty()
   genre: string;
 
   @IsString()

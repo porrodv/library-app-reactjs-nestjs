@@ -1,8 +1,25 @@
+import { useQuery } from '@tanstack/react-query';
 import { BookCard } from '../components/BookCard';
+import { booksService } from '../services/book.services';
 
 export const BooksList: React.FC = () => {
+  const { isPending, isError, data, error } = useQuery({
+    queryKey: ['books'],
+    queryFn: booksService,
+  });
+
+  // const
+
+  if (isPending) {
+    return <span>Loading...</span>;
+  }
+
+  if (isError) {
+    return <span>Error: {error.message}</span>;
+  }
+
   return (
-    <div className='p-4 px-10'>
+    <div className='p-4 px-10 scroll-m-2'>
       <div className='w-full mb-4 flex justify-between'>
         <div>
           <label
@@ -20,14 +37,17 @@ export const BooksList: React.FC = () => {
         <div>ACÁ IRAN FILTROS</div>
       </div>
       <section className='w-full grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
-        <div className='grid place-items-center'>
-          <BookCard
-            title='Los perros negros'
-            author='Alexander Porro'
-            publishYear={2020}
-            imageUrl='public/portada1.jpg'
-          />
-        </div>
+        {data.map((book) => (
+          <div key={book._id} className='grid place-items-center'>
+            <BookCard
+              title={book.title}
+              author={book.author}
+              summary={book.summary}
+              publishYear={book.year}
+              imageUrl='https://marketplace.canva.com/EAE8SCCNlvo/1/0/1003w/canva-verde-y-rosa-ciencia-ficci%C3%B3n-portada-de-libro-SSKxUZUBOJg.jpg'
+            />
+          </div>
+        ))}
       </section>
     </div>
   );

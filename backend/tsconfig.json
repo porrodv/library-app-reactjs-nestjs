@@ -12,5 +12,9 @@
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true
+  },
+  "watchOptions": {
+    "watchFile": "dynamicPriorityPolling",
+    "watchDirectory": "dynamicPriorityPolling"
   }
 }
